@@ -1,0 +1,39 @@
+{
+    "name": "gulp-config",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "dev": "gulp",
+        "build": "gulp build --prod"
+    },
+    "author": "Romain Penchenat",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "latest",
+        "@babel/preset-env": "latest",
+        "babelify": "^10.0.0",
+        "browser-sync": "latest",
+        "browserify": "^17.0.0",
+        "del": "latest",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-babel": "latest",
+        "gulp-cached": "latest",
+        "gulp-concat": "latest",
+        "gulp-connect-php": "^1.0.3",
+        "gulp-csso": "latest",
+        "gulp-ext-replace": "latest",
+        "gulp-imagemin": "^4.1.0",
+        "gulp-jshint": "^1.3.0",
+        "gulp-load-plugins": "latest",
+        "gulp-minify": "latest",
+        "gulp-rename": "latest",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-string-replace": "^1.1.2",
+        "gulp-stylus": "latest",
+        "gulp-webp": "^4.0.0",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    }
+}
