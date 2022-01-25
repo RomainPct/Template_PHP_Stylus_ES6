@@ -40,7 +40,7 @@ const uid = generateUID()
  /** 
   * JS managment
  */
-gulp.task('jsBundler', () => {
+  gulp.task('jsBundler', () => {
     const bundle = browserify({
         entries: `${source.js}/app.js`,
         debug: true,
@@ -49,7 +49,8 @@ gulp.task('jsBundler', () => {
         presets: ['@babel/env']
     }))
     .bundle()
-    return bundle
+    if (prod) {
+        return bundle
             .pipe(sourceStream(`app-${uid}.js`))
             .pipe(buffer()) // You need this if you want to continue using the stream with other plugins
             .pipe(plugins.sourcemaps.init({loadMaps: true}))
@@ -57,6 +58,12 @@ gulp.task('jsBundler', () => {
             .pipe(plugins.sourcemaps.write('.'))
             .pipe(gulp.dest(destination.js))
             .pipe(browserSync.stream())
+    } else {
+        return bundle
+            .pipe(sourceStream(`app-${uid}.js`))
+            .pipe(gulp.dest(destination.js))
+            .pipe(browserSync.stream())
+    }
 })
  
  /** 
