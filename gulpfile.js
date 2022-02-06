@@ -123,7 +123,7 @@ gulp.task('cssMinifier', function() {
   * Manage static files
   */
  gulp.task('copyStaticFiles', function() {
-     return gulp.src(`${source.static}**/*`)
+     return gulp.src([`${source.static}**/*`, `${source.static}**/.*`])
                 .pipe(plugins.cached('static_files'))
                 .pipe(gulp.dest(destination.assets))
  })
