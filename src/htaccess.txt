@@ -2,9 +2,13 @@ ErrorDocument 401 default
 
 RewriteEngine On
 RewriteBase /
-# RewriteCond %{HTTPS} off 
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteRule ^(.*)\.(?!js|css|jpg|png|svg|woff|woff2|otf|xml|ico|manifest|map|webp|webm|mp4)([^.]*)$ $1\.php
+
+RewriteCond %{HTTP_HOST} ^(www\.)?_PROD_URL_HERE_\.com$ [NC]
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteCond %{REQUEST_URI} !^/assets/.*$
 RewriteCond %{REQUEST_URI} !^/analytics/
 RewriteCond %{REQUEST_FILENAME} !-d

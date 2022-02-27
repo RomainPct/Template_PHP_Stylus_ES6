@@ -16,6 +16,8 @@
     <meta property="og:site_name" content="">
     <meta property="og:type" content="website">
 
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Favicon : https://realfavicongenerator.net -->
 
     <!-- Style -->
