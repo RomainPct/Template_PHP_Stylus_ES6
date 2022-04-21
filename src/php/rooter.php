@@ -5,7 +5,7 @@ if ($pos !== false) {
     $url = substr($url, 0, $pos);
 }
 if ($url == "" || $url == "/") {
-    include_once 'pages/home.php';
+    include 'pages/home.php';
 } else {
-    include_once 'pages'.$url.'.php';
+    include 'pages'.$url.'.php';
 }
